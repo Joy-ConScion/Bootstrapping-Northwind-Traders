@@ -1,6 +1,7 @@
 package com.pluralsight.northwind_traders_springboot.controller;
 
 import com.pluralsight.northwind_traders_springboot.model.Category;
+import com.pluralsight.northwind_traders_springboot.service.CategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +11,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/categories")
-public class CategoryService categoryService {
+public class CategoryController {
+
+    private final CategoryService categoryService;
 
     public CategoryController (CategoryService categoryService) {
         this.categoryService = categoryService;
