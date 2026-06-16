@@ -5,7 +5,9 @@ import com.pluralsight.northwind_traders_springboot.model.Category;
 import com.pluralsight.northwind_traders_springboot.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -20,7 +22,8 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
-
-
+    public Optional<Category> getCategoryById(int id){
+        return categoryRepository.findById(id);
+    }
 
 }

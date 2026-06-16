@@ -3,9 +3,7 @@ package com.pluralsight.northwind_traders_springboot.controller;
 import com.pluralsight.northwind_traders_springboot.model.Category;
 import com.pluralsight.northwind_traders_springboot.service.CategoryService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,7 +12,6 @@ import java.util.List;
 public class CategoryController {
 
     private final CategoryService categoryService;
-
     public CategoryController (CategoryService categoryService) {
         this.categoryService = categoryService;
     }
@@ -24,5 +21,11 @@ public class CategoryController {
         return ResponseEntity.ok(categoryService.getAllCategories());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Category> getCategoryById(@PathVariable int id){
+        return categoryService.getCategoryById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 
 }
