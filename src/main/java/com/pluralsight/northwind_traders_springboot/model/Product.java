@@ -37,8 +37,85 @@ public class Product {
     private int reorderLevel;
 
     @Column(name = "Discontinued")
-    private boolean discontinued;
+    private int discontinued;
 
+    public int getProductId() {
+        return productId;
+    }
 
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getSupplierId() {
+        return supplierId;
+    }
+
+    public void setSupplierId(String supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public int getQuantityPerUnit() {
+        return quantityPerUnit;
+    }
+
+    public void setQuantityPerUnit(int quantityPerUnit) {
+        this.quantityPerUnit = quantityPerUnit;
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public int getUnitsInStock() {
+        return unitsInStock;
+    }
+
+    public void setUnitsInStock(int unitsInStock) {
+        this.unitsInStock = unitsInStock;
+    }
+
+    public int getUnitsOnOrder() {
+        return unitsOnOrder;
+    }
+
+    public void setUnitsOnOrder(int unitsOnOrder) {
+        this.unitsOnOrder = unitsOnOrder;
+    }
+
+    public int getReorderLevel() {
+        return reorderLevel;
+    }
+
+    public void setReorderLevel(int reorderLevel) {
+        this.reorderLevel = reorderLevel;
+    }
+
+    public int getDiscontinued() {
+        return discontinued;
+    }
+
+    public void setDiscontinued(int discontinued) {
+        this.discontinued = discontinued;
+    }
 }
