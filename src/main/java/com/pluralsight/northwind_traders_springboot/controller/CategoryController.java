@@ -2,6 +2,7 @@ package com.pluralsight.northwind_traders_springboot.controller;
 
 import com.pluralsight.northwind_traders_springboot.model.Category;
 import com.pluralsight.northwind_traders_springboot.service.CategoryService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +27,19 @@ public class CategoryController {
         return categoryService.getCategoryById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCategory(@PathVariable int id){
+        if (categoryService.deleteCategory(id)){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping
+    public ResponseEntity<Category> createCategory(@RequestBody Category category){
+        return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.createCategory(category));
     }
 
 }
