@@ -39,7 +39,7 @@ public class OrderService {
 
     public Optional<Order> updateOrder(int id, Order udpatedOrder) {
         return orderRepository.findById(id).map(existing->{
-            existing.setCustomerId(udpatedOrder.getCustomerId());
+            existing.setShipCountry(udpatedOrder.getShipCountry());
             existing.setShipName(udpatedOrder.getShipName());
             return orderRepository.save(existing);
         }

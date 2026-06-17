@@ -45,7 +45,9 @@ public class OrderController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Order> updateOrder(@PathVariable int id,@RequestBody Order order){
-        return ResponseEntity.ok(orderService.updateOrder(id,order));
+        return orderService.updateOrder(id,order)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
 }

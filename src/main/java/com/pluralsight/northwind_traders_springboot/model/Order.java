@@ -15,6 +15,9 @@ public class Order {
     @Column(name = "ShipName")
     private String shipName;
 
+    @Column(name = "ShipCountry")
+    private String shipCountry;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "OrderId")
@@ -26,6 +29,14 @@ public class Order {
 
     public void setShipName(String shipName) {
         this.shipName = shipName;
+    }
+
+    public String getShipCountry() {
+        return shipCountry;
+    }
+
+    public void setShipCountry(String shipCountry) {
+        this.shipCountry = shipCountry;
     }
 
     public String getCustomerId() {
