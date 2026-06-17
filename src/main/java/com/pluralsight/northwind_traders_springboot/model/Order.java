@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "orders")
 public class Order {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CustomerID", insertable = false, updatable = false)
+    private Customer customer;
 
     @Column(name = "CustomerId")
     private String customerId;
