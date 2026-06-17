@@ -7,6 +7,10 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "products")
 public class Product {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CategoryID", insertable = false, updatable = false)
+    private Category category;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ProductId")
@@ -22,13 +26,21 @@ public class Product {
     private int categoryId;
 
     @Column(name = "QuantityPerUnit")
-    private int quantityPerUnit;
+    private String quantityPerUnit;
 
     @Column(name = "UnitPrice")
     private BigDecimal unitPrice;
 
     @Column(name = "UnitsInStock")
     private int unitsInStock;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     @Column(name = "UnitsOnOrder")
     private int unitsOnOrder;
@@ -71,11 +83,11 @@ public class Product {
         this.categoryId = categoryId;
     }
 
-    public int getQuantityPerUnit() {
+    public String getQuantityPerUnit() {
         return quantityPerUnit;
     }
 
-    public void setQuantityPerUnit(int quantityPerUnit) {
+    public void setQuantityPerUnit(String quantityPerUnit) {
         this.quantityPerUnit = quantityPerUnit;
     }
 
