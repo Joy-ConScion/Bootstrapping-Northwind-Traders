@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface CustomerRepository extends JpaRepository<Customer, String> {
 
 
-    List<Customer> findAllCustomers();
+    List<Customer> findAll();
 
     Optional<Customer> findById(String id);
 

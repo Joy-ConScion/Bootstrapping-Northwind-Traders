@@ -1,6 +1,6 @@
 package com.pluralsight.northwind_traders_springboot.controller;
 
-import com.yearup.northwindapi.security.JwtUtil;
+import com.pluralsight.northwind_traders_springboot.security.JwtUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

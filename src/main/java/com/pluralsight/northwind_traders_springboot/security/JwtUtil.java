@@ -1,4 +1,4 @@
-package com.yearup.northwindapi.security;
+package com.pluralsight.northwind_traders_springboot.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

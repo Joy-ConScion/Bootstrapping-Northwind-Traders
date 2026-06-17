@@ -1,4 +1,4 @@
-package com.yearup.northwindapi.security;
+package com.pluralsight.northwind_traders_springboot.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
