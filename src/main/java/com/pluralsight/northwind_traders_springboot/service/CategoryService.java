@@ -27,6 +27,13 @@ public class CategoryService {
 
     public Optional<Category> getCategoryById(int id) {
         return categoryRepository.findById(id);
+        /*Category category = categoryService.getById(id);
+        // get the category by id
+        if (category == null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(categoryService.getById(id));
+        Helps account for anything that doesn't exist*/
     }
 
     public boolean deleteCategory(int id) {
